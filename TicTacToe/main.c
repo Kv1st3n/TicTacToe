@@ -91,6 +91,9 @@ int main() {
 	int row;
 	int col;
 
+	int round = 0;
+	int switchSymbol;
+
 	char board[4][4] = {
 		{' ', '1', '2', '3'},
 		{'1', '_', '_', '_'},
@@ -98,10 +101,25 @@ int main() {
 		{'3', '_', '_', '_'}
 	};
 
-	drawBoard(board, 4, 4);
+	printf("Choose symbol, X (0) or O (1): ");
+	
+	if (scanf_s("%d", &switchSymbol) != 1) {
+		printf("Invalid input! Please enter a number.\n");
+		return 1;
+	}
 
-	int round = 0;
-	int switchSymbol = 0;
+	if (switchSymbol != 0 && switchSymbol != 1) {
+		printf("Invalid input! Please enter 0 for X or 1 for O.\n");
+		return 1;
+	}
+	else if (switchSymbol == 0) {
+		switchSymbol = 0;
+	}
+	else {
+		switchSymbol = 1;
+	}
+
+	drawBoard(board, 4, 4);
 
 	while (round < 9) {
 
