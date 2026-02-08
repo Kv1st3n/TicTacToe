@@ -72,9 +72,6 @@ int checkIfSquareIsOccupied(char board[4][4], int row, int col){
 
 }
 
-void anyMovesLeft(char board[4][4]) {
-
-}
 
 char switchPlayer(int switchSymbol) {
 	
